@@ -58,9 +58,6 @@ body {
 }
 
 .social img {
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  padding: .5rem;
   width: 4rem;
 }
 

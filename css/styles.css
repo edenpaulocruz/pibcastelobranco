@@ -1,0 +1,73 @@
+/* ===== Basic Styles ===== */
+:root {
+  --background-color: #121622;
+  --primary-color: #fff;
+  --secondary-color: #2b72eb;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html {
+  font-family: Arial, 'Helvetica Neue', Helvetica,  sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  margin: 0 auto;
+  max-width: 48rem;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* ===== Header ===== */
+.hero-image {
+  width: 100%;
+}
+
+/* ===== Footer ===== */
+.social {
+  border-top: 1px solid var(--primary-color);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+.social ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social img {
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: .5rem;
+  width: 4rem;
+}
+
+.social svg path {
+  stroke: var(--primary-color);
+}
+
+.social svg:hover path {
+  stroke: var(--secondary-color);
+}

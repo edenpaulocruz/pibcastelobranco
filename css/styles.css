@@ -66,6 +66,21 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.smaller-text {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.bold-text {
+  color: var(--terciary-color);
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
+  margin: 1rem 0 2rem;
+}
+
 .social {
   border-top: 1px solid var(--primary-color);
   margin: 2rem 0;
@@ -158,6 +173,13 @@ body {
   width: 100%;
 }
 
-.button:hover {
+.secondary-button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.button:hover,
+.seconday-button {
   opacity: .75;
 }
+

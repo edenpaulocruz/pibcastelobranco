@@ -80,17 +80,28 @@ function buildQuiz() {
   quizContainer.innerHTML = output.join("");
 }
 
-function showResults(params) {
+function showResults() {
   const answerContainers = quizContainer.querySelectorAll('.answers');
+  const output = [];
+
+  submitButton.innerHTML = 'Gerar PDF';
+  submitButton.setAttribute('data-js', 'pdf-generator');
+  submitButton.classList.add('secondary-button');
 
   myQuestions.forEach( (currentQuestion, questionNumber) => {
     const answerContainer = answerContainers[questionNumber];
     const selector = `input[name=question${questionNumber}]:checked`;
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-    console.log(currentQuestion.question);
-    console.log(currentQuestion.answers[userAnswer]);
+    output.push(
+      `<div>
+        <p class="smaller-text bold-text">${currentQuestion.question}</p>
+        <p class="smaller-text italic-text">${currentQuestion.answers[userAnswer]}</p>
+      `
+    )
   });
+
+  quizContainer.innerHTML = output.join("");
 }
 
 buildQuiz();

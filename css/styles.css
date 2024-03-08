@@ -141,3 +141,23 @@ body {
 .radiocontainer input:checked ~ .checkmark {
 	background-color: var(--secondary-color);
 }
+
+.observation {
+  color: var(--terciary-color);
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: var(--secondary-color);
+  border: 0px;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 1em;
+  width: 100%;
+}
+
+.button:hover {
+  opacity: .75;
+}

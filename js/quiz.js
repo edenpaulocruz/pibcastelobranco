@@ -48,6 +48,7 @@ function buildQuiz() {
   myQuestions.forEach(
     (currentQuestion, questionNumber) => {
       const answers = [];
+      const observations = [];
 
       for (letter in currentQuestion.answers) {
         answers.push(
@@ -59,10 +60,17 @@ function buildQuiz() {
         );
       }
 
+      if (currentQuestion.obs) {
+        observations.push(
+          `<p class="observation">${currentQuestion.obs}</p>`
+        )
+      }
+
       output.push(
         `<div class="quiz-item" id="${currentQuestion.id}">
-          <div class="question"> ${currentQuestion.question} </div>
+          <div class="question"> ${currentQuestion.id}. ${currentQuestion.question} </div>
           <div class="answers"> ${answers.join("")} </div>
+          <div> ${observations.join("")} </div>
         </div>`
       );
     }

@@ -3,6 +3,7 @@
   --background-color: #121622;
   --primary-color: #fff;
   --secondary-color: #2b72eb;
+  --terciary-color: #bcd5ea;
 }
 
 *,
@@ -89,4 +90,56 @@ body {
 
 .social svg:hover path {
   stroke: var(--secondary-color);
+}
+
+.quiz-container {
+  margin-top: 3em;
+}
+
+.quiz-item {
+  left: 0;
+  top: 0;
+  transition: opacity 0.5s;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+
+.radiocontainer {
+  align-items: center;
+  border: 2px solid var(--terciary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  padding: 20px 20px 20px 50px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  word-wrap: break-word;
+}
+
+.radiocontainer input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	position: absolute;
+	left: 15px;
+	height: 20px;
+	width: 20px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+.radiocontainer input:checked ~ .checkmark {
+	background-color: #065ca3;
 }

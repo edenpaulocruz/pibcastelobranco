@@ -102,6 +102,34 @@ function showResults() {
   });
 
   quizContainer.innerHTML = output.join("");
+  const generatePdfButton = document.querySelector('[data-js="pdf-generator"]');
+  generatePdfButton.addEventListener('click', generatePdf);
+}
+
+function generatePdf() {
+  const result = document.querySelector('main').innerHTML;
+
+  let style = '<style>';
+  style = style + '.smaller-text {font-size: 12px;line-height: .25;}';
+  style = style + '.bold-text {font-weight: bold;}';
+  style = style + '.italic-text {margin: 1rem 0 1.5rem;}';
+  style = style + '</style>';
+
+  // CRIA UM OBJETO WINDOW
+  // let win = window.open('', '', 'height=700,width=700');
+  let win = window.open('', '');
+
+  win.document.write('<html><head>');
+  win.document.write('<title>Resultado</title>');   // <title> CABEÇALHO DO PDF.
+  win.document.write(style);                                     // INCLUI UM ESTILO NA TAB HEAD
+  win.document.write('</head>');
+  win.document.write('<body>');
+  win.document.write(result);                          // O CONTEUDO DA TABELA DENTRO DA TAG BODY
+  win.document.write('</body></html>');
+
+  win.document.close(); 	                                         // FECHA A JANELA
+
+  win.print();                                                            // IMPRIME O CONTEUDO
 }
 
 buildQuiz();

@@ -19,103 +19,7 @@
   <div class="container">
     <main>
       <h1 class="main_heading">Questionário Desafio 40 dias de oração juntos</h1>
-      <section class="quiz-container" id="quiz">
-        <div class="quiz-item quiz-item__active" id="1">
-          <div class="question">Há quanto tempo você está em seu casamento atual?</div>
-          <div class="answers">
-            <label class="radiocontainer">
-              Menos de cinco anos.
-              <input type="radio" name="question${questionNumber}" value="a">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Menos de dez anos.
-              <input type="radio" name="question${questionNumber}" value="b">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Menos de quinze anos.
-              <input type="radio" name="question${questionNumber}" value="c">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Quinze anos ou mais.
-              <input type="radio" name="question${questionNumber}" value="d">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="quiz-item" id="2">
-          <div class="question">Este é seu primeiro casamento?</div>
-          <div class="answers">
-            <label class="radiocontainer">
-              Sim.
-              <input type="radio" name="question${questionNumber}" value="a">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Não, este é meu segundo casamento.
-              <input type="radio" name="question${questionNumber}" value="b">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Não, este é meu terceiro casamento ou mais.
-              <input type="radio" name="question${questionNumber}" value="c">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="quiz-item" id="3">
-          <div class="question">Você e seu cônjuge atualmente oram juntos?</div>
-          <div class="answers">
-            <label class="radiocontainer">
-              Quase todos os dias.
-              <input type="radio" name="question${questionNumber}" value="a">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Às vezes.
-              <input type="radio" name="question${questionNumber}" value="b">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Raramente.
-              <input type="radio" name="question${questionNumber}" value="c">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              Nunca.
-              <input type="radio" name="question${questionNumber}" value="d">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="quiz-item" id="4">
-          <div class="question">Por quanto tempo?</div>
-          <div class="answers">
-            <label class="radiocontainer">
-              5-15 minutos.
-              <input type="radio" name="question${questionNumber}" value="a">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              15-30 minutos.
-              <input type="radio" name="question${questionNumber}" value="b">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              30-45 minutos.
-              <input type="radio" name="question${questionNumber}" value="c">
-              <span class="checkmark"></span>
-            </label>
-            <label class="radiocontainer">
-              45-60 minutos.
-              <input type="radio" name="question${questionNumber}" value="d">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-      </section>
+      <section class="quiz-container" data-js="quiz"></section>
     </main>
     <footer class="social">
       <ul>
@@ -142,5 +46,6 @@
       </ul>
     </footer>
   </div>
+  <script src="./js/quiz.js"></script>
 </body>
 </html>

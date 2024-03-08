@@ -1,4 +1,5 @@
 const quizContainer = document.querySelector('[data-js="quiz"]');
+const submitButton = document.querySelector('[data-js="submit"]');
 const myQuestions = [
 	{
 		id: 1,
@@ -79,4 +80,19 @@ function buildQuiz() {
   quizContainer.innerHTML = output.join("");
 }
 
+function showResults(params) {
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+
+  myQuestions.forEach( (currentQuestion, questionNumber) => {
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    console.log(currentQuestion.question);
+    console.log(currentQuestion.answers[userAnswer]);
+  });
+}
+
 buildQuiz();
+
+submitButton.addEventListener('click', showResults);

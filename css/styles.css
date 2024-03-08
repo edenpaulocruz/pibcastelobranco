@@ -27,25 +27,47 @@ body {
   background-color: var(--background-color);
   color: var(--primary-color);
   margin: 0 auto;
-  max-width: 48rem;
-  padding: 2rem 0;
   width: 100%;
 }
 
 .container {
   margin: 0 auto;
+  max-width: 48rem;
   width: 90%;
 }
 
-/* ===== Header ===== */
+.header {
+  background-color: var(--primary-color);
+  margin-bottom: 2rem;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.header_logo {
+  border-radius: 50%;
+}
+
 .hero-image {
   width: 100%;
 }
 
-/* ===== Footer ===== */
+.main_heading {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
 .social {
   border-top: 1px solid var(--primary-color);
-  margin-top: 2rem;
+  margin: 2rem 0;
   padding-top: 2rem;
 }
 .social ul {

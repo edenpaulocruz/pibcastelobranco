@@ -55,8 +55,8 @@ function showResults() {
 
     output.push(
       `<div>
-        <p class="smaller-text bold-text">${currentQuestion.question}</p>
-        <p class="smaller-text italic-text">${currentQuestion.answers[userAnswer]}</p>
+        <p class="smaller-text bold-text">${currentQuestion.id}. ${currentQuestion.question}</p>
+        <p class="smaller-text italic-text">${currentQuestion.answers[userAnswer] || "Sem resposta."}</p>
       `
     )
   });

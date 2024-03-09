@@ -22,12 +22,13 @@ const myQuestions = [
 	},
 	{
 		id: 3,
-		question: "Você e seu cônjuge atualmente oram juntos?",
+		question: "Você e seu cônjuge atualmente oram juntos? Não considere as orações antes das refeições.",
 		answers: {
-			a: "Quase todos os dias.",
-			b: "Às vezes.",
-			c: "Raramente.",
-			d: "Nunca."
+      a: "Todos os dias",
+			b: "Quase todos os dias.",
+			c: "Às vezes.",
+			d: "Raramente.",
+			e: "Nunca."
 		},
 		obs: "Se você respondeu 'Nunca', vá para a pergunta 12."
 	},
@@ -84,8 +85,8 @@ function showResults() {
   const answerContainers = quizContainer.querySelectorAll('.answers');
   const output = [];
 
-  submitButton.innerHTML = 'Gerar PDF';
-  submitButton.setAttribute('data-js', 'pdf-generator');
+  submitButton.innerHTML = 'Guardar respostas';
+  submitButton.setAttribute('data-js', 'save-result');
   submitButton.classList.add('secondary-button');
 
   myQuestions.forEach( (currentQuestion, questionNumber) => {
@@ -102,34 +103,42 @@ function showResults() {
   });
 
   quizContainer.innerHTML = output.join("");
-  const generatePdfButton = document.querySelector('[data-js="pdf-generator"]');
-  generatePdfButton.addEventListener('click', generatePdf);
+
+  const p = document.createElement('p');
+  p.innerText = 'Para guardar as respostas escolha Salvar PDF como destino da impressão.';
+  p.classList.add('alert-text');
+  quizContainer.appendChild(p);
+
+  const saveResultButton = document.querySelector('[data-js="save-result"]');
+  saveResultButton.addEventListener('click', saveResult);
 }
 
-function generatePdf() {
-  const result = document.querySelector('main').innerHTML;
+function saveResult() {
+  quizContainer.removeChild(quizContainer.lastElementChild);
 
-  let style = '<style>';
-  style = style + '.smaller-text {font-size: 12px;line-height: .25;}';
-  style = style + '.bold-text {font-weight: bold;}';
-  style = style + '.italic-text {margin: 1rem 0 1.5rem;}';
-  style = style + '</style>';
-
-  // CRIA UM OBJETO WINDOW
-  // let win = window.open('', '', 'height=700,width=700');
+  const resultPage = `
+    <html>
+      <head>
+        <title>Resultado - Questionário Desafio 40 Dias de Oração Juntos</title>
+        <style>
+          .smaller-text {font-size: 16px;line-height: 1;}
+          .bold-text {font-weight: bold;}
+          .italic-text {font-style: italic; margin: 1rem 0 1.5rem;}
+        </style>
+      </head>
+      <body>
+        <h1>Resultado - Questionário Desafio 40 Dias de Oração Juntos</h1>
+        <hr>
+        ${quizContainer.innerHTML}
+      </body>
+    </html>
+  `
   let win = window.open('', '');
+  win.document.write(resultPage);
+  win.document.close();
+  win.print();
 
-  win.document.write('<html><head>');
-  win.document.write('<title>Resultado</title>');   // <title> CABEÇALHO DO PDF.
-  win.document.write(style);                                     // INCLUI UM ESTILO NA TAB HEAD
-  win.document.write('</head>');
-  win.document.write('<body>');
-  win.document.write(result);                          // O CONTEUDO DA TABELA DENTRO DA TAG BODY
-  win.document.write('</body></html>');
-
-  win.document.close(); 	                                         // FECHA A JANELA
-
-  win.print();                                                            // IMPRIME O CONTEUDO
+  window.location.reload(true)
 }
 
 buildQuiz();

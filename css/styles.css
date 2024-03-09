@@ -59,6 +59,11 @@ body {
   margin-bottom: 2rem;
 }
 
+.separator {
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
 .text {
   font-size: 1.8rem;
   font-weight: 500;
@@ -79,6 +84,17 @@ body {
 .italic-text {
   font-style: italic;
   margin: 1rem 0 2rem;
+}
+
+.alert-text {
+  border: 2px solid var(--secondary-color);
+  border-radius: 1rem;
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  padding: 4rem;
+  text-align: center;
 }
 
 .social {

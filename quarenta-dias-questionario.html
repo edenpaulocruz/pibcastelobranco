@@ -4,19 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>PIBCB - Primeira Igreja Batista de Castelo Branco</title>
+  <title>PIBCB - Desafio 40 dias de oração juntos</title>
 </head>
 <body>
+  <header class="header">
+    <a href="./">
+      <img
+      src="./img/pibcb-logo.jpg"
+        alt="Logotipo PIBCB - Primeira Igreja Batista de Castelo Branco"
+        class="header_logo"
+      >
+    </a>
+  </header>
   <div class="container">
     <main>
-      <header>
-        <img
-          src="./img/pibcb-tema-2024.jpeg"
-          alt="Tema anual 2024: É tempo de reconstruir! - 'Sim, vamos começar a reconstrução.' Neemias 2:18"
-          class="hero-image"
-        >
-      </header>
+      <h1 class="main_heading">Questionário Desafio 40 Dias de Oração Juntos</h1>
+      <hr class="separator">
+      <section class="quiz-container">
+        <div data-js="quiz"></div>
+        <div>
+          <button class="button" data-js="submit">Finalizar</button>
+        </div>
+      </section>
     </main>
     <footer class="social">
       <ul>
@@ -43,5 +52,6 @@
       </ul>
     </footer>
   </div>
+  <script type="module" src="./js/quiz.js"></script>
 </body>
 </html>

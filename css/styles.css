@@ -3,6 +3,7 @@
   --background-color: #121622;
   --primary-color: #fff;
   --secondary-color: #2b72eb;
+  --terciary-color: #bcd5ea;
 }
 
 *,
@@ -27,25 +28,78 @@ body {
   background-color: var(--background-color);
   color: var(--primary-color);
   margin: 0 auto;
-  max-width: 48rem;
-  padding: 2rem 0;
   width: 100%;
 }
 
 .container {
   margin: 0 auto;
+  max-width: 48rem;
   width: 90%;
 }
 
-/* ===== Header ===== */
+.header {
+  background-color: var(--primary-color);
+  margin-bottom: 2rem;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.header_logo {
+  border-radius: 50%;
+}
+
 .hero-image {
   width: 100%;
 }
 
-/* ===== Footer ===== */
+.main_heading {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.separator {
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.smaller-text {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.bold-text {
+  color: var(--terciary-color);
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
+  margin: 1rem 0 2rem;
+}
+
+.alert-text {
+  border: 2px solid var(--secondary-color);
+  border-radius: 1rem;
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  padding: 4rem;
+  text-align: center;
+}
+
 .social {
   border-top: 1px solid var(--primary-color);
-  margin-top: 2rem;
+  margin: 2rem 0;
   padding-top: 2rem;
 }
 .social ul {
@@ -67,4 +121,81 @@ body {
 
 .social svg:hover path {
   stroke: var(--secondary-color);
+}
+
+.quiz-container {
+  margin-top: 3rem;
+}
+
+.quiz-item {
+  margin-bottom: 4rem;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.radiocontainer {
+  align-items: center;
+  border: 2px solid var(--terciary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.6em;
+  margin-bottom: 1rem;
+  padding: 20px 20px 20px 50px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  word-wrap: break-word;
+}
+
+.radiocontainer input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkmark {
+	position: absolute;
+	left: 15px;
+	height: 20px;
+	width: 20px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+}
+
+.radiocontainer input:checked ~ .checkmark {
+	background-color: var(--secondary-color);
+}
+
+.observation {
+  color: var(--terciary-color);
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: var(--secondary-color);
+  border: 0px;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: block;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+}
+
+.secondary-button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.button:hover {
+  opacity: .75;
 }
